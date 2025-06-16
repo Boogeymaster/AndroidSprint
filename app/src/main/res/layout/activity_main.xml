@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constrainLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
 
-</LinearLayout>
+    <FrameLayout
+        android:id="@+id/frButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/constrainLayout">
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_layout_horizontal"
+            android:layout_marginTop="@dimen/margin_layout_vertical"
+            android:layout_marginEnd="@dimen/margin_layout_horizontal"
+            android:layout_marginBottom="@dimen/margin_layout_vertical"
+
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue"
+                android:paddingStart="@dimen/padding_btn_horizontal"
+                android:paddingTop="@dimen/padding_btn_vertical"
+                android:paddingEnd="@dimen/padding_btn_horizontal"
+                android:paddingBottom="@dimen/padding_btn_vertical"
+                android:layout_marginEnd="@dimen/margin_between_btn"
+                style="@style/StyleNavButton"
+                android:background="@drawable/shape_rounded_8"
+                android:text="@string/category"
+                >
+
+            </Button>
+
+            <Button
+                android:id="@+id/btnFavorites"
+                android:drawableEnd="@drawable/ic_heart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/red"
+                android:paddingStart="@dimen/padding_btn_horizontal"
+                android:paddingTop="@dimen/padding_btn_vertical"
+                android:paddingEnd="@dimen/padding_end_btn_icon"
+                android:paddingBottom="@dimen/padding_btn_vertical"
+                android:layout_marginStart="@dimen/margin_between_btn"
+                style="@style/StyleNavButton"
+                android:background="@drawable/shape_rounded_8"
+                android:text="@string/favorites"
+                >
+
+            </Button>
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
