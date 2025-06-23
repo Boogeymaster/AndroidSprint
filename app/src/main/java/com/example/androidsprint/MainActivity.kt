@@ -1,14 +1,15 @@
 package com.example.androidsprint
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.androidsprint.databinding.ActivityMainBinding
 
-class MainActivity : ComponentActivity() {
-    private lateinit var binding : ActivityMainBinding
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private val categoriesListFragment = CategoriesListFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,5 +21,10 @@ class MainActivity : ComponentActivity() {
             insets
         }
         setContentView(binding.root)
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.mainContainer, categoriesListFragment, "categoriesList")
+            .commit()
+
     }
 }

@@ -10,7 +10,7 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/mainContainer"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/llButtons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/constrainLayout">
 
-        <Button
+        <android.widget.Button
             android:id="@+id/btnCategory"
             style="@style/StyleNavButton"
             android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:backgroundTint="@color/blue_color"
             android:text="@string/title_category" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/btnFavorites"
             style="@style/StyleNavButton"
             android:layout_width="match_parent"

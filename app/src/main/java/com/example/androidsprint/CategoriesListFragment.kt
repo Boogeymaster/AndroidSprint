@@ -22,6 +22,4 @@ class CategoriesListFragment : Fragment() {
         val view = binding.root
         return view
     }
-
-
 }
